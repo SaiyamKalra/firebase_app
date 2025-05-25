@@ -1,3 +1,4 @@
+import 'package:firebase_app/auth_service.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
@@ -160,16 +161,22 @@ class _RegisterPageState extends State<RegisterPage> {
                   ),
                   child: Row(
                     children: [
-                      Image.asset(
-                        "assets/images/Google.png",
-                        height: 150,
-                        width: 150,
+                      GestureDetector(
+                        onTap: () => AuthService().signInWithGoogle(),
+                        child: Image.asset(
+                          "assets/images/Google.png",
+                          height: 150,
+                          width: 150,
+                        ),
                       ),
                       SizedBox(width: 40),
-                      Image.asset(
-                        "assets/images/R.png",
-                        height: 100,
-                        width: 100,
+                      GestureDetector(
+                        onTap: () {},
+                        child: Image.asset(
+                          "assets/images/R.png",
+                          height: 100,
+                          width: 100,
+                        ),
                       ),
                     ],
                   ),
